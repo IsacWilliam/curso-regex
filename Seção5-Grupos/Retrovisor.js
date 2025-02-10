@@ -21,5 +21,5 @@ console.log(texto1.match(/(?:lenta)(mente).*\1/gi));
 // Captura "lenta" e opcionalmente "mente" (o "?" torna o grupo "mente" opcional).
 console.log(texto1.match(/(lenta)(mente)?/gi));
 
-// Captura "lenta" e "mente", porém "$2" na chamada da função `match` não faz sentido, pois essa função não suporta parâmetros de substituição diretamente. A forma correta seria com `replace`.
-console.log(texto1.match(/(lenta)(mente)/gi, '$2'));
+// Substitui a ocorrência de "lenta" seguida por "mente" mantendo apenas "mente" no resultado, pois "$2" refere-se ao conteúdo do segundo grupo capturado.
+console.log(texto1.replace(/(lenta)(mente)/gi, '$2'));
